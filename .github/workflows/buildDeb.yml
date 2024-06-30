@@ -11,8 +11,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  buildDeb:
-    runs-on: ubuntu-latest
+  build-24-04:
+    runs-on: ubuntu-24.04
 
     steps:
       - name: build
@@ -24,7 +24,7 @@ jobs:
           tar -xzf linux-wifi-hotspot.tar.gz
           cd linux-wifi-hotspot-4.7.1
           debuild -uc -us
-      
+
       - name: upload
         uses: softprops/action-gh-release@v2
         with:
